@@ -9,7 +9,7 @@ export class EquipmentComponent implements OnInit {
 
   equipment: string[] = ["Habitat dome", "Drones","Food containers", "Oxygen tanks"]
   
-  equipmentBeingEdited: number; //index of equipment being edited
+  equipmentBeingEdited: string; 
 
   constructor() { }
 
@@ -25,12 +25,13 @@ export class EquipmentComponent implements OnInit {
     this.equipment.splice(index, 1);
   }
 
-  edit(equipment: string) {
-    this.equipmentBeingEdited = index;
+  edit(equip: string) {
+    this.equipmentBeingEdited = equip;
  }
 
- save(equipmentName: string, index: number) {
-  this.equipment[index] = equipmentName;
+ save(oldEquipmentName: string ,newEquipmentName: string) {
+  let index = this.equipment.indexOf(oldEquipmentName);
+  this.equipment[index] = newEquipmentName;
   this.equipmentBeingEdited = null;
   }
 

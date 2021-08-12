@@ -10,8 +10,8 @@
 
       <ng-template #elseBlock>
          <!-- edit state of member -->
-         <input #updatedName (keyup.enter)="save(updatedName.value, equip)" value="{{equip}}"/>
-         <button (click)="save(updatedName.value, equip)">save</button>
+         <input #updatedName (keyup.enter)="save(equip, updatedName.value, equip)" value="{{equip}}"/>
+         <button (click)="save(equip, updatedName.value, equip)">save</button>
       </ng-template>
 
    </li>
